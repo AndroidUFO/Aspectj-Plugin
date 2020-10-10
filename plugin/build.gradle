@@ -1,0 +1,59 @@
+apply plugin: 'groovy'
+apply plugin: "com.gradle.plugin-publish"
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.6.4'
+    implementation 'org.aspectj:aspectjrt:1.9.4'
+    implementation 'org.aspectj:aspectjtools:1.9.4'
+}
+
+
+repositories {
+    jcenter()
+}
+
+group = 'com.androidufo.aspectj'
+version = '1.0.1'
+
+
+//uploadArchives {
+//    //使用当前目录下面的maven仓库，仓库在当前目录的repo文件目录中
+//    repositories {
+//        mavenDeployer {
+//            repository(url: uri('../repo'))
+//        }
+//    }
+//}
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.12.0"
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+pluginBundle {
+    website = 'https://github.com/AndroidUFO/repo'
+    vcsUrl = 'https://github.com/AndroidUFO/repo'
+//    website = 'http://www.gradle.org/'
+//    vcsUrl = 'https://github.com/gradle/gradle'
+    description = 'aspectj for androidufo'  //插件描述
+    tags = ['aspectj', 'androidufo']  //插件的tag。可以通过这个在插件门户上搜索
+
+    plugins {
+        greetingsPlugin {
+            id = 'com.androidufo.aspectj'   //插件的id，到时候apply的插件id
+            displayName = 'AndroidUFO plugin'
+        }
+    }
+}
