@@ -43,8 +43,8 @@ repositories {
 }
 
 pluginBundle {
-    website = 'https://github.com/AndroidUFO/repo'
-    vcsUrl = 'https://github.com/AndroidUFO/repo'
+    website = 'https://github.com/AndroidUFO/Aspectj-Plugin'
+    vcsUrl = 'https://github.com/AndroidUFO/Aspectj-Plugin'
 //    website = 'http://www.gradle.org/'
 //    vcsUrl = 'https://github.com/gradle/gradle'
     description = 'aspectj for androidufo'  //插件描述
